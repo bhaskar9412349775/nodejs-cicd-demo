@@ -32,8 +32,4 @@ jobs:
       - name: Done
         run: echo "Image pushed to Docker Hub!"
 
-          script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/nodejs-cicd-demo
-            docker stop myapp || true && docker rm myapp || true
-            docker run -d --name myapp -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/nodejs-cicd-demo
 
